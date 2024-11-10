@@ -5,8 +5,7 @@ from django.db import models
 class Discount(models.Model):
     amount = models.DecimalField(max_digits=5, decimal_places=2)
     start_date = models.DateField()
-    end_date = models.DateField()
-   
+    end_date = models.DateField() 
     products = models.ManyToManyField(Product, through='ProductDiscount', related_name="discounts")
 
     def __str__(self):
